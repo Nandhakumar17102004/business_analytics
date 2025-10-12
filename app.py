@@ -233,10 +233,9 @@ class BankMarketingDashboard:
     def prepare_data(self):
         """Prepare data for modeling with sampling for faster training"""
         # REDUCE SAMPLE SIZE FOR FASTER TRAINING
-        sample_fraction = 0.3  # Use 30% of data for faster training
+        sample_fraction = 0.3  # Use less% of data for faster training
         if len(self.df) > 10000:
             self.df = self.df.sample(frac=sample_fraction, random_state=42)
-            st.info(f"📊 Using {sample_fraction*100}% sample ({len(self.df)} records) for faster training")
         
         # Separate features and target
         X = self.df.drop('y', axis=1)
@@ -802,7 +801,7 @@ class BankMarketingDashboard:
         with col1:
             powerbi_url = st.text_input(
                 "Enter your Campaign Performance Power BI URL:",
-                value="https://app.powerbi.com/reportEmbed?reportId=YOUR_CAMPAIGN_REPORT_ID",
+                value="https://app.powerbi.com/reportEmbed?reportId=664ee3b9-f63e-4a9d-a036-c1895b831388&autoAuth=true&ctid=00f9cda3-075e-44e5-aa0b-aba3add6539f",
                 key="campaign_url",
                 help="Paste the embed URL from Power BI Service"
             )
@@ -860,7 +859,7 @@ class BankMarketingDashboard:
         with col1:
             powerbi_url = st.text_input(
                 "Enter your Customer Segmentation Power BI URL:",
-                value="https://app.powerbi.com/reportEmbed?reportId=YOUR_SEGMENTATION_REPORT_ID", 
+                value="https://app.powerbi.com/reportEmbed?reportId=e83ca50e-113d-4853-941e-6094241f328f&autoAuth=true&ctid=00f9cda3-075e-44e5-aa0b-aba3add6539f", 
                 key="segmentation_url",
                 help="Get this from Power BI Service → Embed → Website or portal"
             )
@@ -916,7 +915,7 @@ class BankMarketingDashboard:
         with col1:
             powerbi_url = st.text_input(
                 "Enter Contact Strategy Power BI URL:",
-                value="https://app.powerbi.com/reportEmbed?reportId=YOUR_CONTACT_STRATEGY_ID",
+                value="https://app.powerbi.com/reportEmbed?reportId=aba2bc01-3099-48cb-81fd-9d4c426aafd7&autoAuth=true&ctid=00f9cda3-075e-44e5-aa0b-aba3add6539f",
                 key="contact_strategy_url"
             )
         
@@ -994,7 +993,7 @@ class BankMarketingDashboard:
         with col1:
             powerbi_url = st.text_input(
                 "Enter Predictive Insights Power BI URL:",
-                value="https://app.powerbi.com/reportEmbed?reportId=YOUR_PREDICTIVE_INSIGHTS_ID",
+                value="https://app.powerbi.com/reportEmbed?reportId=345754cc-2a9d-45ef-b6ed-6aa82ddd804c&autoAuth=true&ctid=00f9cda3-075e-44e5-aa0b-aba3add6539f",
                 key="predictive_insights_url"
             )
         
@@ -1299,11 +1298,18 @@ class BankMarketingDashboard:
             - **Business Changes:** Monitor for market shifts affecting model performance
             """)
         
-        st.success("""
-        **Conclusion:** By implementing this AI-driven approach, the bank can transform its marketing strategy from 
-        inefficient mass campaigns to highly targeted, cost-effective operations that deliver better results and 
-        improved customer experiences.
-        """)
+            st.success("""
+            **Conclusion:** By implementing this AI-driven approach, the bank can transform its marketing strategy from 
+            inefficient mass campaigns to highly targeted, cost-effective operations that deliver better results and 
+            improved customer experiences.
+            """)
+
+            st.markdown("""
+            ---
+            **Additional Recommendation:**
+                
+            Most customers in this dataset do not subscribe to the bank’s term deposit offer, so we need to think about ways to improve it. First, we should try to understand why people say “no” by looking at their age, job, education, balance, previous interactions, and how the bank contacted them. Not everyone is equally likely to subscribe, so it helps to focus on the customers who are more likely to say “yes”. For example, people with higher balances, no loans in default, or who responded positively in the past are good candidates. The way and time we contact them also matters—calling at the right time or using the right method (like mobile phone vs. landline) can make a difference. Personalizing the offer, such as giving better interest rates or special promotions based on the customer’s situation, makes it more attractive. Simple incentives and making the process easy and trustworthy can encourage more people to subscribe. Finally, by testing different approaches, learning from the results, and continuously improving, the bank can increase the number of customers who say “yes” over time.
+            """)
 
     def get_feature_names(self):
         """Get feature names after preprocessing"""
