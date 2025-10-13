@@ -463,17 +463,17 @@ class BankMarketingDashboard:
         
         # Team Members Section
         st.markdown("---")
-        st.markdown('<h3 class="section-header" style="text-align: center; margin-top: 2rem;">👥 Project Team</h3>', unsafe_allow_html=True)
+        st.markdown('<h3 class="section-header" style="text-align: center; margin-top: 2rem;"> Project Team Members</h3>', unsafe_allow_html=True)
         
         # Create 5 columns for team members
         cols = st.columns(5)
         
         team_members = [
-            ("Narravula Mukesh", "🎯"),
-            ("Revanth Singothu", "💼"),
-            ("N. Siddharth Swamy", "🚀"),
-            ("Nandha Kumar P", "📊"),
-            ("Devesh Keshavan S", "🔬")
+            ("Narravula Mukesh","Business Analyst"),
+            ("Revanth Singothu","Project Manager"),
+            ("N. Siddharth Swamy","ML Engineer"),
+            ("Nandha Kumar P","Data Analyst"),
+            ("Devesh Keshavan S","Data Engineer")
         ]
         
         for col, (name, icon) in zip(cols, team_members):
@@ -1386,4 +1386,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
