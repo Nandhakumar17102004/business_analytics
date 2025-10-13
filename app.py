@@ -472,8 +472,8 @@ class BankMarketingDashboard:
             ("Narravula Mukesh","Business Analyst"),
             ("Revanth Singothu","Project Manager"),
             ("N. Siddharth Swamy","ML Engineer"),
-            ("Nandha Kumar P","Data Analyst"),
-            ("Devesh Keshavan S","Data Engineer")
+            ("Nandha Kumar","Data Analyst"),
+            ("Devesh Keshavan","Data Engineer")
         ]
         
         for col, (name, icon) in zip(cols, team_members):
@@ -1386,5 +1386,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
