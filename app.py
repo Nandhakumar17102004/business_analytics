@@ -460,6 +460,30 @@ class BankMarketingDashboard:
             - Phase 2: Exploratory Data Analysis
             - Phase 3: Model Training & Evaluation
             """)
+        
+        # Team Members Section
+        st.markdown("---")
+        st.markdown('<h3 class="section-header" style="text-align: center; margin-top: 2rem;">👥 Project Team</h3>', unsafe_allow_html=True)
+        
+        # Create 5 columns for team members
+        cols = st.columns(5)
+        
+        team_members = [
+            ("Narravula Mukesh", "🎯"),
+            ("Revanth Singothu", "💼"),
+            ("N. Siddharth Swamy", "🚀"),
+            ("Nandha Kumar P", "📊"),
+            ("Devesh Keshavan S", "🔬")
+        ]
+        
+        for col, (name, icon) in zip(cols, team_members):
+            with col:
+                st.markdown(f"""
+                <div style="background-color: #262730; padding: 20px; border-radius: 10px; text-align: center; border: 2px solid #2e86ab; margin: 10px 0;">
+                    <div style="font-size: 2.5rem; margin-bottom: 10px;">{icon}</div>
+                    <div style="color: white; font-weight: 600; font-size: 14px;">{name}</div>
+                </div>
+                """, unsafe_allow_html=True)
 
     def show_data_overview(self):
         """Display data overview"""
@@ -1308,7 +1332,7 @@ class BankMarketingDashboard:
             ---
             **Additional Recommendation:**
                 
-            Most customers in this dataset do not subscribe to the bank’s term deposit offer, so we need to think about ways to improve it. First, we should try to understand why people say “no” by looking at their age, job, education, balance, previous interactions, and how the bank contacted them. Not everyone is equally likely to subscribe, so it helps to focus on the customers who are more likely to say “yes”. For example, people with higher balances, no loans in default, or who responded positively in the past are good candidates. The way and time we contact them also matters—calling at the right time or using the right method (like mobile phone vs. landline) can make a difference. Personalizing the offer, such as giving better interest rates or special promotions based on the customer’s situation, makes it more attractive. Simple incentives and making the process easy and trustworthy can encourage more people to subscribe. Finally, by testing different approaches, learning from the results, and continuously improving, the bank can increase the number of customers who say “yes” over time.
+            Most customers in this dataset do not subscribe to the bank's term deposit offer, so we need to think about ways to improve it. First, we should try to understand why people say "no" by looking at their age, job, education, balance, previous interactions, and how the bank contacted them. Not everyone is equally likely to subscribe, so it helps to focus on the customers who are more likely to say "yes". For example, people with higher balances, no loans in default, or who responded positively in the past are good candidates. The way and time we contact them also matters—calling at the right time or using the right method (like mobile phone vs. landline) can make a difference. Personalizing the offer, such as giving better interest rates or special promotions based on the customer's situation, makes it more attractive. Simple incentives and making the process easy and trustworthy can encourage more people to subscribe. Finally, by testing different approaches, learning from the results, and continuously improving, the bank can increase the number of customers who say "yes" over time.
             """)
 
     def get_feature_names(self):
@@ -1362,3 +1386,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
