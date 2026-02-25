@@ -1,7 +1,7 @@
 # Bank Marketing Analytics Project
 
 ## Overview
-This project focuses on analyzing bank marketing campaigns to understand customer behavior and improve marketing strategies. The analysis provides insights into customer segments, campaign performance, and recommendations for future campaigns.
+This project focuses on analyzing bank marketing campaigns to understand customer behavior and improve marketing strategies. The analysis provides insights into customer segments, campaign performance, and recommendations for future campaigns using Power BI.
 
 ## Objectives
 - To explore and analyze historical bank marketing data.
@@ -36,7 +36,4 @@ Summarize the insights gained from the analysis and suggest potential improvemen
 Discuss areas for further investigation and analysis, such as the incorporation of real-time data or more complex modeling techniques.
 
 ## Author
-Nandhakumar17102004 
-
-## Date
-2026-02-25
+Nandhakumar
